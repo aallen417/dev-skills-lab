@@ -1,9 +1,17 @@
-import { skills } from "../data/skill-data.js"
+import { Skill } from "../models/skill.js"
 
-function index(req, res) {
-  res.render("skills/index", {
-    skills
-  })
+async function index(req, res) {
+  try {
+    const skills = await Skill.find({})
+  
+  
+    res.render("skills/index", {
+      skills
+    })
+    
+  } catch (error) {
+    res.redirect(("/"))
+  }
 }
 
 export {
