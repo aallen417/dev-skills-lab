@@ -14,6 +14,11 @@ async function index(req, res) {
   }
 }
 
+async function newSkill(req, res) {
+  res.render("skills/new")
+}
+
 export {
-  index
+  index,
+  newSkill as new,
 }
