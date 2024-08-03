@@ -62,6 +62,7 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
+  req.body.learned = !!req.body.learned
   try {
     await Skill.findByIdAndUpdate(req.params.skillId, req.body, {new: true})
     res.redirect(`/skills/${req.params.skillId}`)    

@@ -9,6 +9,7 @@
   <h1>Edit Skill</h1>
   <form autocomplete="off" action="/skills/<%= skill._id %>?_method=PUT" method="POST">
     <input value="<%= skill.text %>" type="text" name="text">
+    <input type="checkbox" name="learned" <%= skill.learned ? "checked" : "" %> >
     <button type="submit">Save Skill</button>
   </form>
 </body>
