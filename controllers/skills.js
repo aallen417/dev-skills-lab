@@ -39,9 +39,20 @@ async function show(req, res) {
   }
 }
 
+async function deleteSkill(req, res) {
+  try {
+    await Skill.findByIdAndDelete(req.params.skillId)
+    res.redirect("/skills")    
+  } catch (error) {
+    console.log(error)    
+    res.redirect("/skills")
+  }
+}
+
 export {
   index,
   newSkill as new,
   create,
   show,
+  deleteSkill as delete
 }
